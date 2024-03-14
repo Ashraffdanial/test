@@ -1,0 +1,32 @@
+.outer_container
+{
+}
+
+.inner_container
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 50vw;
+    border-radius: 10px;
+    border: 1px solid silver;
+    box-shadow: 0px 2px 10px rgb(88, 88, 88);
+}
+.check_list
+{
+
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 1%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+#place-order-btn
+{
+    width: 20vh;
+    margin: 5%;
+}
+.totalprice
+{
+    font-weight: bolder;
+}
