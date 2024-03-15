@@ -7,37 +7,6 @@ from app import app
 
 df = pd.read_excel('test/Test_info.xls')
 
-
-app.layout = dbc.Container([
-    dbc.Row([
-        dbc.Col([
-            html.H3('Select Items'),
-            dbc.Col([
-                ##Checklist is used for selection of item
-                dbc.Checklist(
-                    id='item-checklist',
-                    options=[{'label': f"{row['Name']} - ${row['Price']} , {row['Weight']}g", 'value': idx} for idx, row in df.iterrows()],
-                    value=[],
-                    inline=False,
-                    className="check_list"
-                ),
-                ##Button for placing order
-                dbc.Button('Place Order', id='place-order-btn', color='primary', className='mt-3'),
-            ], className="inner_container"),
-        ], className="outer_container")
-    ]),
-
-    ##Modal is used to display the result
-    dbc.Modal([
-        dbc.ModalHeader(dbc.ModalTitle("Order Summary")),
-        dbc.ModalBody(id='order-summary-body'),
-        dbc.ModalFooter(
-        dbc.Button("Close", id='close-modal', className="ms-auto", n_clicks=0)
-        )
-    ], id='order-summary-modal', is_open=False, size="lg"),
-], fluid=True)
-
-
 ###Backend
 def calculate_courier_price(weight): #For courier price
     if weight <= 200:
