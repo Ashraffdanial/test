@@ -8,9 +8,11 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Import your app layout and callbacks
 from layout import layout
+from callbacks import register_callbacks
 
 
 app.layout = layout
+register_callbacks(app)
 
 
 # Flask instance to be used by Gunicorn
