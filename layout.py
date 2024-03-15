@@ -8,8 +8,8 @@ df = pd.read_excel('Test_info.xls')
 layout = dbc.Container([
     dbc.Row([
         dbc.Col([
-            html.H3('Select Items'),
             dbc.Col([
+                html.P('Select Items', className="tittle"),
                 dbc.Checklist(
                     id='item-checklist',
                     options=[{'label': f"{row['Name']} - ${row['Price']} , {row['Weight']}g", 'value': idx} for idx, row in df.iterrows()],
