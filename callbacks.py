@@ -26,18 +26,18 @@ def create_packages(items, max_package_value=250):
     packages = []
     
     while not items.empty:
-        current_package = {'items': [], 'weight': 0, 'price': 0}
+        current_package = {'items': [], 'weight': 0, 'price': 0}  #to store the current informatio about the current packages that being processed
         items_to_remove = []
 
         for index, row in items.iterrows():
-            if current_package['price'] + row['Price'] < max_package_value:
+            if current_package['price'] + row['Price'] < max_package_value:  #Making sure the current package value does not exceed 250, 
                 current_package['items'].append(row['Name'])
                 current_package['weight'] += row['Weight']
                 current_package['price'] += row['Price']
-                items_to_remove.append(index)
+                items_to_remove.append(index) 
 
         # Remove the items that we've already added to a package
-        items.drop(items_to_remove, inplace=True)
+        items.drop(items_to_remove, inplace=True)                                 #it will loop until all item has been processed                      
         
         # If no items were added, break the loop to avoid an infinite loop
         if not items_to_remove:
@@ -96,7 +96,7 @@ def register_callbacks(app):
 
             return summary, True
 
-        # In case we have any other button clicks (future-proofing)
+        # In case we have any other button clicks 
         return dash.no_update, is_modal_open
 
 if __name__ == '__main__':

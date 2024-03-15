@@ -27,3 +27,4 @@ layout = dbc.Container([
         dbc.ModalFooter(dbc.Button("Close", id='close-modal', className="ms-auto", n_clicks=0))
     ], id='order-summary-modal', is_open=False, size="lg"),
 ], fluid=True)
+
