@@ -4,7 +4,7 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 import pandas as pd
 
-df = pd.read_excel('Test_info.xls')
+df = pd.read_excel('test/Test_info.xls')
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
