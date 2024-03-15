@@ -3,7 +3,7 @@ from dash import html
 import pandas as pd
 
 # Load your data
-df = pd.read_excel('test/Test_info.xls')
+df = pd.read_excel('test\Test_info.xls')
 
 # Define your app layout
 layout = dbc.Container([
