@@ -18,7 +18,7 @@ def calculate_courier_price(weight): #For courier price
     elif weight <= 5000:
         return 20
     else:
-        return 20  # Assuming the price for anything above 5000g
+        return 20  # Assuming this is the price for anything above 5000g
 
 
 def create_packages(items, max_package_value=250):
