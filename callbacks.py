@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 from app import app
 
-df = pd.read_excel('test/Test_info.xls')
+df = pd.read_excel('Test_info.xls')
 
 ###Backend
 def calculate_courier_price(weight): #For courier price
